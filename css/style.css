@@ -337,12 +337,12 @@ html {
 }
 
 .tagline .text:nth-child(3n+1) {
-    color: gray;
+    color: rgba(255, 1, 169, 0.3);
     animation: dangling-lights-second 2s ease infinite;
 }
 
 .tagline .text:nth-child(3n+2) {
-    color: grey;
+    color: rgba(229, 3, 3, 0.5);
     animation: dangling-lights-third 2s ease infinite;
 }
 
@@ -370,28 +370,29 @@ html {
     }
 }
 
-/* tagline ends */
 
 
 @keyframes dangling-lights-first {
     0% { color: #1FC3A5; }
     33% { color: #1FC3A5; }
-    34% { color: gray; }
-    100% { color: gray; }
+    34% { color: rgba(31, 195, 165, 0.2); }
+    100% { color: rgba(31, 195, 165, 0.2); }
 }
 
 @keyframes dangling-lights-second {
-    0% { color: gray; }
-    33% { color: gray; }
+    0% { color: rgba(255, 1, 169, 0.3); }
+    33% { color: rgba(255, 1, 169, 0.3); }
     34% { color: #FF01A9; }
     66% { color: #FF01A9; }
-    67% { color: gray; }
-    100% { color: gray; }
+    67% { color: rgba(255, 1, 169, 0.3); }
+    100% { color: rgba(255, 1, 169, 0.3); }
 }
 
 @keyframes dangling-lights-third {
-    0% { color: gray; }
-    66% { color: gray; }
-    67% { color: #D90000; }
-    100% { color: #D90000; }
+    0% { color: rgba(229, 3, 3, 0.5); }
+    66% { color: rgba(229, 3, 3, 0.5); }
+    67% { color: #e50303; }
+    100% { color: #e50303; }
 }
+/* tagline ends */
+
