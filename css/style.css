@@ -1,6 +1,8 @@
 :root {
     --color-primary: #0B2034;
+    --color-secondary: #1FC3A5;
     --color-white: #ffffff;
+    --color-black: #000000;
 }
 
 html {
@@ -11,6 +13,10 @@ html {
 * {
     margin: 0;
     padding: 0;
+}
+
+.container {
+    max-width: 120rem !important;
 }
 
 /* nav section */
@@ -216,6 +222,176 @@ html {
     background-color: #D90000;
     border-radius: 50%;
 }
-
-
 /* hero ends */
+
+
+/* about section */
+
+.about {
+    background-color: var(--color-secondary);
+    padding: 10rem 0;
+    color: var(--color-primary);
+}
+
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: stretch; */
+}
+
+.about .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.about .title {
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+.about .text {
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.about .text > p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+
+.about .image-container {
+}
+
+.about .image-inner-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    position: relative;
+
+}
+
+.about .image-inner-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 8rem solid var(--color-secondary);
+    border-left: 8rem solid grey;
+}
+
+.about .image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.about .button {
+    background-color: var(--color-black);
+    padding: 1.4rem 2rem;
+    border-radius: 5rem;
+    width: fit-content;
+    color: var(--color-white);
+    font-size: 1.6rem;
+}
+
+.about .button p {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
+
+
+/* about ends */
+
+/* tagline section  */
+
+.tagline {
+    background-color: var(--color-primary);
+    padding: 10rem 0;
+}
+
+.tagline .container {
+    /* text-align: right; */
+}
+
+.tagline .texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family:'Chilanka', 'Lato', sans-serif;
+}
+
+.tagline .text {
+    font-size: 3.6rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+
+.tagline .text:nth-child(3n+0) {
+    color: #1FC3A5;
+    animation: dangling-lights-first 2s ease infinite;
+}
+
+.tagline .text:nth-child(3n+1) {
+    color: gray;
+    animation: dangling-lights-second 2s ease infinite;
+}
+
+.tagline .text:nth-child(3n+2) {
+    color: grey;
+    animation: dangling-lights-third 2s ease infinite;
+}
+
+.tagline .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media(max-width: 1136px) {
+    .tagline .text {
+        font-size: 3rem;
+    }
+}
+
+@media(max-width: 988px) {
+    .tagline .text {
+        font-size: 2.6rem;
+    }
+}
+
+@media(max-width: 800px) {
+    .tagline .text {
+        font-size: 2.4rem;
+    }
+}
+
+/* tagline ends */
+
+
+@keyframes dangling-lights-first {
+    0% { color: #1FC3A5; }
+    33% { color: #1FC3A5; }
+    34% { color: gray; }
+    100% { color: gray; }
+}
+
+@keyframes dangling-lights-second {
+    0% { color: gray; }
+    33% { color: gray; }
+    34% { color: #FF01A9; }
+    66% { color: #FF01A9; }
+    67% { color: gray; }
+    100% { color: gray; }
+}
+
+@keyframes dangling-lights-third {
+    0% { color: gray; }
+    66% { color: gray; }
+    67% { color: #D90000; }
+    100% { color: #D90000; }
+}
