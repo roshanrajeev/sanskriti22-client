@@ -331,18 +331,43 @@ html {
     cursor: pointer;
 }
 
+
 .tagline .text:nth-child(3n+0) {
+    color: grey;
+}
+
+.tagline .text:nth-child(3n+1) {
+    color: grey;
+}
+
+.tagline .text:nth-child(3n+2) {
+    color: grey;
+}
+
+.tagline .text.active:nth-child(3n+0) {
+    color: #1FC3A5;
+}
+
+.tagline .text.active:nth-child(3n+1) {
+    color: #ff01aa;
+}
+
+.tagline .text.active:nth-child(3n+2) {
+    color: #f6a121;
+}
+
+.tagline .text.animate:nth-child(3n+0) {
     color: #1FC3A5;
     animation: dangling-lights-first 2s ease infinite;
 }
 
-.tagline .text:nth-child(3n+1) {
-    color: rgba(255, 1, 169, 0.3);
+.tagline .text.animate:nth-child(3n+1) {
+    color: grey;
     animation: dangling-lights-second 2s ease infinite;
 }
 
-.tagline .text:nth-child(3n+2) {
-    color: rgba(229, 3, 3, 0.5);
+.tagline .text.animate:nth-child(3n+2) {
+    color: grey;
     animation: dangling-lights-third 2s ease infinite;
 }
 
@@ -375,24 +400,24 @@ html {
 @keyframes dangling-lights-first {
     0% { color: #1FC3A5; }
     33% { color: #1FC3A5; }
-    34% { color: rgba(31, 195, 165, 0.2); }
-    100% { color: rgba(31, 195, 165, 0.2); }
+    34% { color: grey; }
+    100% { color: grey; }
 }
 
 @keyframes dangling-lights-second {
-    0% { color: rgba(255, 1, 169, 0.3); }
-    33% { color: rgba(255, 1, 169, 0.3); }
+    0% { color: grey; }
+    33% { color: grey; }
     34% { color: #FF01A9; }
     66% { color: #FF01A9; }
-    67% { color: rgba(255, 1, 169, 0.3); }
-    100% { color: rgba(255, 1, 169, 0.3); }
+    67% { color: grey; }
+    100% { color: grey; }
 }
 
 @keyframes dangling-lights-third {
-    0% { color: rgba(229, 3, 3, 0.5); }
-    66% { color: rgba(229, 3, 3, 0.5); }
-    67% { color: #e50303; }
-    100% { color: #e50303; }
+    0% { color: grey; }
+    66% { color: grey; }
+    67% { color: #f6a121; }
+    100% { color: #f6a121; }
 }
 /* tagline ends */
 

@@ -24,10 +24,20 @@ textsContainerElem.addEventListener('mouseover', async (e) => {
         const textElem = e.target
         const id = textElem.dataset.id
         img.src = `./img/events/${id}.jpg`
+        textElem.classList.add("active")
+        textsElem.forEach(e => {
+            e.classList.remove("animate")
+        })
         
     }
 })
 
 textsContainerElem.addEventListener('mouseleave', async (e) => {
     img.src = `./img/collage2.jpg`
+    textsElem.forEach(e => e.classList.add("animate"))
+
+})
+
+textsContainerElem.addEventListener('mouseout', async (e) => {
+    textsElem.forEach(e => e.classList.remove("active"))
 })
