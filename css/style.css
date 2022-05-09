@@ -1,0 +1,155 @@
+:root {
+    --color-primary: #0B2034;
+    --color-white: #ffffff;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* nav section */
+.nav {
+    width: 100%;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    transform: translate(0, 4rem);
+}
+
+
+.nav .title {
+    color: var(--color-white);
+}
+
+.nav .title > span {
+    display: block;
+}
+
+.nav .title .primary {
+    font-size: 3.1rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.nav .title .secondary {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.nav .menu-icon-container {
+    background-color: var(--color-white);
+    border-radius: 50%;
+    width: 4.8rem;
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* nav ends */
+
+
+/* hero section */
+
+.hero {
+    background-color: var(--color-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 0 2rem;
+}
+
+.hero .logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -6rem;
+    flex: 1;
+}
+
+.hero .logo {
+    max-height: 21rem;
+    max-width: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.hero .ring {
+    border-radius: 50%;
+    padding: 4px;
+    border: 8px solid white;
+}
+
+.hero .ring-inner {
+    padding: 3.8rem 3rem;
+    border-color: #D90000;
+}
+
+.hero .ring-middle {
+    border-color: #FF01A9;
+}
+
+.hero .ring-outer {
+    border-color: #1FC3A5;
+    transform: translate(0, 6rem);
+}
+
+.hero .ring-container {
+    /* background-color: blue; */
+    overflow: hidden;
+}
+
+.hero .logo-text-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+.hero .logo-text {
+    max-height: 11rem;
+    max-width: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.hero .logo-subtext-container {
+    font-size: 2.2rem;
+    font-style: italic;
+    color: var(--color-white);
+    margin-top: 2rem;
+}
+
+.hero .underline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.hero .underline .line {
+    background-color: var(--color-white);
+    width: 5rem;
+    height: 0.5rem;
+    border-radius: 2rem;
+    margin-right: 0.5rem;
+}
+
+.hero .underline .dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #D90000;
+    border-radius: 50%;
+}
+
+
+/* hero ends */
