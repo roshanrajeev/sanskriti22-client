@@ -165,16 +165,45 @@ html {
 
 .hero .ring-inner {
     padding: 3.8rem 3rem;
-    border-color: #D90000;
+    border-color: #f30707;
+    animation: ring-lights-inner 1s ease 2.5s 3;
+    /* animation-direction: alternate-reverse; */
 }
 
 .hero .ring-middle {
     border-color: #FF01A9;
+    animation: ring-lights-middle 1s ease 2.5s 3;
+    /* animation-direction: alternate-reverse; */
 }
 
 .hero .ring-outer {
-    border-color: #1FC3A5;
+    border-color: #1FC2A5;
     transform: translate(0, 6rem);
+    animation: ring-lights-outer 1s ease 2.5s 3;
+    /* animation-direction: alternate-reverse; */
+}
+
+@keyframes ring-lights-inner {
+    0% { border-color: #f30707; }
+    33% { border-color: #f30707; }
+    34% { border-color: #f30707b3; }
+    100% { border-color: #f30707B3; }
+}
+
+@keyframes ring-lights-middle {
+    0% { border-color: #FF01A9B3; }
+    33% { border-color: #FF01A9B3; }
+    34% { border-color: #FF01A9; }
+    66% { border-color: #FF01A9; }
+    67% { border-color: #FF01A9B3; }
+    100% { border-color: #FF01A9B3; }
+}
+
+@keyframes ring-lights-outer {
+    0% { border-color: #1FC3A580; }
+    66% { border-color: #1FC3A580; }
+    67% { border-color: #1FC3A5; }
+    100% { border-color: #1FC3A5; }
 }
 
 .hero .ring-container {
