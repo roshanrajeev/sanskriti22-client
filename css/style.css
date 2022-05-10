@@ -184,26 +184,54 @@ html {
 }
 
 @keyframes ring-lights-inner {
-    0% { border-color: #f30707; }
-    33% { border-color: #f30707; }
-    34% { border-color: #f30707b3; }
-    100% { border-color: #f30707B3; }
+    0% { 
+        border-color: #f30707;
+    }
+    33% { 
+        border-color: #f30707;
+    }
+    34% { 
+        border-color: #f30707b3; 
+    }
+    100% { 
+        border-color: #f30707B3; 
+    }
 }
 
 @keyframes ring-lights-middle {
-    0% { border-color: #FF01A9B3; }
-    33% { border-color: #FF01A9B3; }
-    34% { border-color: #FF01A9; }
-    66% { border-color: #FF01A9; }
-    67% { border-color: #FF01A9B3; }
-    100% { border-color: #FF01A9B3; }
+    0% { 
+        border-color: #FF01A9B3; 
+    }
+    33% { 
+        border-color: #FF01A9B3; 
+    }
+    34% { 
+        border-color: #FF01A9;
+    }
+    66% { 
+        border-color: #FF01A9; 
+    }
+    67% { 
+        border-color: #FF01A9B3; 
+    }
+    100% { 
+        border-color: #FF01A9B3; 
+    }
 }
 
 @keyframes ring-lights-outer {
-    0% { border-color: #1FC3A580; }
-    66% { border-color: #1FC3A580; }
-    67% { border-color: #1FC3A5; }
-    100% { border-color: #1FC3A5; }
+    0% { 
+        border-color: #1FC3A580; 
+    }
+    66% { 
+        border-color: #1FC3A580; 
+    }
+    67% { 
+        border-color: #1FC3A5; 
+    }
+    100% { 
+        border-color: #1FC3A5; 
+    }
 }
 
 .hero .ring-container {
@@ -375,14 +403,26 @@ html {
 
 .tagline .text.active:nth-child(3n+0) {
     color: #1FC3A5;
+    text-shadow: 0 0 7px #1FC3A580, 
+                     0 0 10px #1FC3A580, 
+                     0 0 21px #1FC3A580,
+                     0 0 42px #1FC3A5;
 }
 
 .tagline .text.active:nth-child(3n+1) {
     color: #ff01aa;
+    text-shadow: 0 0 7px #FF01A980, 
+                     0 0 10px #FF01A980, 
+                     0 0 21px #FF01A980,
+                     0 0 42px #FF01A9;
 }
 
 .tagline .text.active:nth-child(3n+2) {
     color: #f6a121;
+    text-shadow: 0 0 7px #f6a12180, 
+                     0 0 10px #f6a12180, 
+                     0 0 21px #f6a12180,
+                     0 0 42px #f6a121;
 }
 
 .tagline .text.animate:nth-child(3n+0) {
@@ -427,26 +467,86 @@ html {
 
 
 @keyframes dangling-lights-first {
-    0% { color: #1FC3A5; }
-    33% { color: #1FC3A5; }
-    34% { color: grey; }
-    100% { color: grey; }
+    0% { 
+        color: #1FC3A5;
+        text-shadow: 0 0 7px #1FC3A580, 
+                     0 0 10px #1FC3A580, 
+                     0 0 21px #1FC3A580,
+                     0 0 42px #1FC3A5;
+    }
+    33% { 
+        color: #1FC3A5; 
+        text-shadow: 0 0 7px #1FC3A580, 
+                     0 0 10px #1FC3A580, 
+                     0 0 21px #1FC3A580,
+                     0 0 42px #1FC3A5;
+    }
+    34% { 
+        color: grey; 
+        text-shadow: none;
+    }
+    100% { 
+        color: grey; 
+        text-shadow: none;
+    }
 }
 
 @keyframes dangling-lights-second {
-    0% { color: grey; }
-    33% { color: grey; }
-    34% { color: #FF01A9; }
-    66% { color: #FF01A9; }
-    67% { color: grey; }
-    100% { color: grey; }
+    0% { 
+        color: grey; 
+        text-shadow: none;
+    }
+    33% { 
+        color: grey; 
+        text-shadow: none;
+    }
+    34% { 
+        color: #FF01A9; 
+        text-shadow: 0 0 7px #FF01A980, 
+                     0 0 10px #FF01A980, 
+                     0 0 21px #FF01A980,
+                     0 0 42px #FF01A9;
+    }
+    66% { 
+        color: #FF01A9; 
+        text-shadow: 0 0 7px #FF01A980, 
+                     0 0 10px #FF01A980, 
+                     0 0 21px #FF01A980,
+                     0 0 42px #FF01A9;
+    }
+    67% { 
+        color: grey; 
+        text-shadow: none;
+    }
+    100% { 
+        color: grey; 
+        text-shadow: none;
+    }
 }
 
 @keyframes dangling-lights-third {
-    0% { color: grey; }
-    66% { color: grey; }
-    67% { color: #f6a121; }
-    100% { color: #f6a121; }
+    0% { 
+        color: grey; 
+        text-shadow: none;
+    }
+    66% { 
+        color: grey; 
+        text-shadow: none;
+    }
+    67% { 
+        color: #f6a121; 
+        text-shadow: 0 0 7px #f6a12180, 
+                     0 0 10px #f6a12180, 
+                     0 0 21px #f6a12180,
+                     0 0 42px #f6a121;
+    }
+    100% { 
+        color: #f6a121; 
+        text-shadow: 0 0 7px #f6a12180, 
+                     0 0 10px #f6a12180, 
+                     0 0 21px #f6a12180,
+                     0 0 42px #f6a121;
+    }
 }
 /* tagline ends */
 
