@@ -329,7 +329,7 @@ body{
 @media screen and (max-width: 440px)
 {
   .card{
-    top: 16rem;
+    top: 10rem;
   }
 }
 .card-img-top{
