@@ -60,20 +60,21 @@ html {
 }
 
 
-.nav .title {
+.nav .title a {
     color: var(--color-white);
+    text-decoration: none;
 }
 
-.nav .title > span {
+.nav .title a > span {
     display: block;
 }
 
-.nav .title .primary {
+.nav .title a .primary {
     font-size: 3.1rem;
     font-family: 'Dancing Script', cursive;
 }
 
-.nav .title .secondary {
+.nav .title a .secondary {
     font-size: 1.4rem;
     font-weight: 400;
 }
@@ -151,6 +152,8 @@ html {
 
 .nav .menu-text {
     font-size: 1.4rem;
+    font-weight: 500;
+    opacity: 0.8;
 }
 
 /* nav ends */
@@ -731,6 +734,11 @@ html {
 .footer .link {
     margin-bottom: 1rem;
     /* line-height: 1.92rem; */
+}
+
+.footer .link a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .footer .link-title {
