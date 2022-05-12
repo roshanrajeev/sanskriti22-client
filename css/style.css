@@ -371,6 +371,15 @@ html {
     width: 100%;
     object-fit: contain;
 }
+
+@media (max-width: 767px) {
+    .about {
+        padding: 7rem 1.4rem;
+    }
+    .about .title {
+        font-size: 5.2rem;
+    }
+}
 /* about ends */
 
 /* tagline section  */
@@ -475,6 +484,14 @@ html {
     }
 }
 
+@media (max-width: 767px) {
+    .tagline {
+        padding: 7rem 1.4rem;
+    }
+    .tagline .image {
+        margin-bottom: 4rem;
+    }
+}
 
 
 @keyframes dangling-lights-first {
@@ -639,6 +656,12 @@ html {
 }
 
 @media (max-width: 767px) {
+    .events .container {
+        padding: 7rem 1.4rem;
+    }
+}
+
+@media (max-width: 767px) {
     .event,
     .event:nth-child(2n) {
         flex-direction: column;
@@ -647,6 +670,12 @@ html {
     .event .image {
         margin: 0;
         max-width: 100%;
+    }
+    .event:not(:last-child) {
+        margin-bottom: 7rem;
+    }
+    .event .title {
+        font-size: 5.2rem;
     }
 }
 
@@ -752,7 +781,22 @@ html {
         text-decoration: none;
         margin-right: 0;
         margin-top: 1rem;
-    }    
+    }
+    .footer .title {
+        font-size: 5.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 7rem 1.4rem;
+    }
+    .footer .subtitle {
+        margin-bottom: 6rem;
+    }
+    .footer .links {
+        margin-bottom: 6rem;
+    }
 }
 
 /* footer ends */
