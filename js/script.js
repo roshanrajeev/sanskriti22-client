@@ -2,8 +2,16 @@ function toggleMenu() {
     const menu = document.querySelector(".menu")
     if(menu.classList.contains('active')) {
         menu.classList.remove('active')
+        document.body.style.cssText = `
+            max-height: auto;
+            overflow-y: scroll
+        `
     }else {
         menu.classList.add('active')
+        document.body.style.cssText = `
+            max-height: 100vh;
+            overflow: hidden
+        `
     }
 }
 
