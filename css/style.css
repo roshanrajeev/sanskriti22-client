@@ -60,20 +60,21 @@ html {
 }
 
 
-.nav .title {
+.nav .title a {
     color: var(--color-white);
+    text-decoration: none;
 }
 
-.nav .title > span {
+.nav .title a > span {
     display: block;
 }
 
-.nav .title .primary {
+.nav .title a .primary {
     font-size: 3.1rem;
     font-family: 'Dancing Script', cursive;
 }
 
-.nav .title .secondary {
+.nav .title a .secondary {
     font-size: 1.4rem;
     font-weight: 400;
 }
@@ -151,6 +152,8 @@ html {
 
 .nav .menu-text {
     font-size: 1.4rem;
+    font-weight: 500;
+    opacity: 0.8;
 }
 
 /* nav ends */
@@ -165,7 +168,7 @@ html {
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    padding: 0 2rem;
+    padding: 0 1.4rem;
     position: relative;
 }
 
@@ -183,7 +186,7 @@ html {
     max-height: 21rem;
     max-width: 100%;
     filter: brightness(0) invert(1);
-}
+    }
 
 .hero .ring {
     border-radius: 50%;
@@ -371,6 +374,15 @@ html {
     width: 100%;
     object-fit: contain;
 }
+
+@media (max-width: 767px) {
+    .about {
+        padding: 7rem 1.4rem;
+    }
+    .about .title {
+        font-size: 5.2rem;
+    }
+}
 /* about ends */
 
 /* tagline section  */
@@ -475,6 +487,14 @@ html {
     }
 }
 
+@media (max-width: 767px) {
+    .tagline {
+        padding: 7rem 1.4rem;
+    }
+    .tagline .image {
+        margin-bottom: 4rem;
+    }
+}
 
 
 @keyframes dangling-lights-first {
@@ -639,6 +659,12 @@ html {
 }
 
 @media (max-width: 767px) {
+    .events .container {
+        padding: 7rem 1.4rem;
+    }
+}
+
+@media (max-width: 767px) {
     .event,
     .event:nth-child(2n) {
         flex-direction: column;
@@ -647,6 +673,12 @@ html {
     .event .image {
         margin: 0;
         max-width: 100%;
+    }
+    .event:not(:last-child) {
+        margin-bottom: 7rem;
+    }
+    .event .title {
+        font-size: 5.2rem;
     }
 }
 
@@ -704,6 +736,11 @@ html {
     /* line-height: 1.92rem; */
 }
 
+.footer .link a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .footer .link-title {
     position: relative;
     width: fit-content;
@@ -752,7 +789,22 @@ html {
         text-decoration: none;
         margin-right: 0;
         margin-top: 1rem;
-    }    
+    }
+    .footer .title {
+        font-size: 5.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 7rem 1.4rem;
+    }
+    .footer .subtitle {
+        margin-bottom: 6rem;
+    }
+    .footer .links {
+        margin-bottom: 6rem;
+    }
 }
 
 /* footer ends */
