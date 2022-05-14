@@ -186,7 +186,7 @@ html {
     max-height: 21rem;
     max-width: 100%;
     filter: brightness(0) invert(1);
-}
+    }
 
 .hero .ring {
     border-radius: 50%;
