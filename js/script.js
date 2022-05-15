@@ -49,3 +49,12 @@ textsContainerElem.addEventListener('mouseleave', async (e) => {
 textsContainerElem.addEventListener('mouseout', async (e) => {
     textsElem.forEach(e => e.classList.remove("active"))
 })
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.body.style.height = 'auto';
+        document.body.style.overflowY = 'scroll'
+        const spinnerContainer = document.querySelector(".spinner-container")
+        spinnerContainer.style.display = 'none'
+    }, 1000)
+})
