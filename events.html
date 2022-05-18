@@ -28,12 +28,14 @@
     <nav class="nav">
         <div class="container">
             <h1 class="title">
-                <span class="primary">
-                    Sanskriti&apos;22
-                </span>
-                <span class="secondary">
-                    MACE&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Kothamangalam
-                </span>
+                <a href="/">
+                    <span class="primary">
+                        Sanskriti&apos;22
+                    </span>
+                    <span class="secondary">
+                        MACE&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Kothamangalam
+                    </span>
+                </a>
             </h1>
             <div class="menu-icon-container">
                 <img class="menu-icon" src="./img/icons/menu.svg" alt="">
@@ -43,10 +45,12 @@
             <div class="container">
                 <ul class="menu-items">
                     <li class="menu-item"><a href="/">Home</a></li>
-                    <li class="menu-item"><a href="/events.html?type=arangu">Arangu</a></li>
-                    <li class="menu-item"><a href="/events.html?type=inter">Inter</a></li>
+                    <!-- <li class="menu-item"><a href="/events.html?type=arangu">Arangu</a></li>
+                    <li class="menu-item"><a href="/events.html?type=dj">Choreo-Night/Dj</a></li> -->
+                    <!-- <li class="menu-item"><a href="/coming-soon.html">Choreo-Night</a></li> -->
+                    <li class="menu-item"><a href="/events.html?type=arangu">Arang</a></li>
                 </ul>
-                <p class="menu-text">Website created and maintained by Sanskriti Web Team</p>
+                <p class="menu-text">Website created and maintained by MACE Web Team.</p>
             </div>
         </div>
     </nav>
@@ -61,13 +65,31 @@
     <script src="./js/script.js"></script>
     <script>
         async function fetchEventData(type) {
-            const response = await fetch(`http://localhost:8000/api/events/${type}/`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            const data = await response.json()
+            const data = [
+                { name: "mridangam", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_mridangam" },
+                { name: "anchoring", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_anchoring" },
+                { name: "prasangam", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_prasangam" },
+                { name: "Music Classical", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Music-Classical" },
+                { name: "guitar", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_guitar" },
+                { name: "recitation Malayalam", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_recitation_MALAYALAM" },
+                { name: "recitation English", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_recitation_ENGLISH" },
+                { name: "mimicry", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_mimicry" },
+                { name: "mime", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_mime" },
+                { name: "NaadanPaattu", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/NaadanPaattu" },
+                { name: "bharathanatyam", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_bharathanatyam" },
+                { name: "kolkali", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_kolkali" },
+                { name: "margamkali", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_margamkali" },
+                { name: "vattapattu", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_vattapattu"},
+                { name: "duffmutt", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_duffmutt"},
+                { name: "oppana", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_oppana"},
+                { name: "thiruvathira", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_thiruvathira"},
+                { name: "tabala", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_tabala"},
+                { name: "folkdance", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskirit22_folkdance"},
+                { name: "Mappilappattu", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/MAPPILAPPATTU"},
+                { name: "lightmusic", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_lightmusic"},
+                { name: "monoact", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/sanskriti22_monoact"},
+                { name: "violin", imgUrl: "./img/Alai.jpeg", regLink: "https://bit.ly/Sanskriti22_violin"}
+            ]
             return data
         }
 
@@ -80,9 +102,11 @@
                 card.className = "custom-card col-md-3"
                 card.dataset.id = d.id
                 card.innerHTML = `
-                    <img src="" alt="event"/>
-                    <a class="button">
-                        <p>Know More</p>
+                    <img src="${d.imgUrl}" alt="event" class="cover-image"/>
+                    <div class="filter"></div>
+                    <p class="name">${d.name}</p>
+                    <a class="button" href="${d.regLink}" target="_blank">
+                        <p>Register Now</p>
                         <img src="./img/icons/arrow.svg" alt="">
                     </a>
                 `
@@ -95,7 +119,7 @@
             const urlParams = new URLSearchParams(queryString)
             const type = urlParams.get("type")
             
-            const validTypes = ["arangu", "inter"]
+            const validTypes = ["arangu"]
             if(!validTypes.find((t) => t === type)) 
                 throw new Error("Invalid event type")
             
@@ -106,14 +130,14 @@
         func()
     </script>
     <script>
-        const eventWrapper = document.querySelector('.events-wrapper')
-        eventWrapper.addEventListener('click', (e) => {
-            if(e.target.className === "button") {
-                const card = e.target.parentNode
-                const id = card.dataset.id
-                window.location = `/event.html?id=${id}`
-            }
-        })
+        //const eventWrapper = document.querySelector('.events-wrapper')
+        //eventWrapper.addEventListener('click', (e) => {
+        //    if(e.target.className === "button") {
+        //        const card = e.target.parentNode
+        //        const id = card.dataset.id
+        //        window.location = `/event.html?id=${id}`
+        //    }
+        //})
     </script>
 </body>
 </html>

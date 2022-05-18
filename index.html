@@ -49,8 +49,8 @@
                         <li class="menu-item"><a href="/">Home</a></li>
                         <!-- <li class="menu-item"><a href="/events.html?type=arangu">Arangu</a></li>
                         <li class="menu-item"><a href="/events.html?type=dj">Choreo-Night/Dj</a></li> -->
-                        <li class="menu-item"><a href="/coming-soon.html">Choreo-Night</a></li>
-                        <li class="menu-item"><a href="/coming-soon.html">Arang</a></li>
+                        <!-- <li class="menu-item"><a href="/coming-soon.html">Choreo-Night</a></li> -->
+                        <li class="menu-item"><a href="/events.html?type=arangu">Arang</a></li>
                     </ul>
                     <p class="menu-text">Website created and maintained by MACE Web Team.</p>
                 </div>
@@ -148,7 +148,7 @@
                         of years of rich cultural heritage. Unearthing the true spirit of these art forms is the focus of these 
                         competitions; a tribute to the many pioneers who made art their sole pursuit of life.
                     </p>
-                    <a class="button" href="./coming-soon.html">
+                    <a class="button" href="./events.html?type=arangu">
                         <p>View More</p>
                         <img src="./img/icons/arrow.svg" alt="">
                     </a>
@@ -161,7 +161,7 @@
                     <h1 class="title">Drishyam</h1>
                     <p class="description">Drishyam is the platform where script meets the screen, talent meets wit and creativity meets stories. This is your arena where your stories come to reality. The jump from the reel to real. The collaboration of art to create something unique which has your stamp to it. Afterall, Cinema is love.</p>
                     <a class="button" href="./coming-soon.html">
-                        <p>View More</p>
+                        <p>Register Now</p>
                         <img src="./img/icons/arrow.svg" alt="">
                     </a>
                 </div>
@@ -178,7 +178,7 @@
                     
                     Hop on to enjoy this one of a kind escapade into liveliness!</p>
                     <a class="button" href="./coming-soon.html">
-                        <p>View More</p>
+                        <p>Register Now</p>
                         <img src="./img/icons/arrow.svg" alt="">
                     </a>
                 </div>
@@ -205,7 +205,7 @@ exhibit their uniqueness and creativity . Their journey in reaching the mainstre
                     we assure you that the heat is on as the best crews from all around kerala battle it out for the biggest glory. So get
                     ur crew ready and join us for the greatest showdown of dance....</p>
                     <a class="button" href="./coming-soon.html">
-                        <p>View More</p>
+                        <p>Register Now</p>
                         <img src="./img/icons/arrow.svg" alt="">
                     </a>
                 </div>
@@ -218,7 +218,7 @@ exhibit their uniqueness and creativity . Their journey in reaching the mainstre
                     <h1 class="title">Drishyam</h1>
                     <p class="description">Drishyam is the platform where script meets the screen, talent meets wit and creativity meets stories. This is your arena where your stories come to reality. The jump from the reel to real. The collaboration of art to create something unique which has your stamp to it. Afterall, Cinema is love.</p>
                     <a class="button" href="./coming-soon.html">
-                        <p>View More</p>
+                        <p>Register Now</p>
                         <img src="./img/icons/arrow.svg" alt="">
                     </a>
                 </div>
@@ -231,7 +231,7 @@ exhibit their uniqueness and creativity . Their journey in reaching the mainstre
 exhibit their uniqueness and creativity . Their journey in reaching the mainstream cannot be realized until we walk a mile in their shoes. Each moment with them opens a door of wisdom in us .
 ‘Jalakam’ is a chapter in this book of wonders. It is an event through which we yearn to give back to the community and partake in the joy of Sanskriti 22'.</p>
                     <a class="button">
-                        <p>View More</p>
+                        <p>Register Now</p>
                         <img src="./img/icons/arrow.svg" alt="">
                     </a>
                 </div>
@@ -250,7 +250,7 @@ exhibit their uniqueness and creativity . Their journey in reaching the mainstre
 
                     <a class="button">
 
-                        <p>View More</p>
+                        <p>Register Now</p>
 
                         <img src="./img/icons/arrow.svg" alt="">
 
@@ -310,5 +310,34 @@ exhibit their uniqueness and creativity . Their journey in reaching the mainstre
     <!-- Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
+
+    <script>
+        const textsContainerElem = document.querySelector(".tagline .texts")
+        const textsElem = Array.from(textsContainerElem.children)
+        const img = document.querySelector(".tagline .image img")
+        console.log(textsContainerElem)
+        textsContainerElem.addEventListener('mouseover', async (e) => {
+            if(e.target.classList.contains('text')) {
+                const textElem = e.target
+                const id = textElem.dataset.id
+                img.src = `./img/events/${id}.jpg`
+                textElem.classList.add("active")
+                textsElem.forEach(e => {
+                    e.classList.remove("animate")
+                })
+                
+            }
+        })
+
+        textsContainerElem.addEventListener('mouseleave', async (e) => {
+            img.src = `./img/collage2.jpg`
+            textsElem.forEach(e => e.classList.add("animate"))
+
+        })
+
+        textsContainerElem.addEventListener('mouseout', async (e) => {
+            textsElem.forEach(e => e.classList.remove("active"))
+        })
+    </script>
 </body>
 </html>

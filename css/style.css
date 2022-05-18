@@ -1,3 +1,9 @@
+@font-face {
+    font-family: RetroBoldy;
+    src: url(../fonts/RetroBoldyRegular-6Yw6v.ttf);
+}
+
+
 :root {
     --color-primary: #0B2034;
     --color-secondary: #1FC3A5;
@@ -49,7 +55,6 @@ body {
 }
 
 .button img {
-
 }
 
 /* nav section */
