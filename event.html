@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/events.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="spinner-container">
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+    </div>
+
+    <nav class="nav">
+        <div class="container">
+            <h1 class="title">
+                <span class="primary">
+                    Sanskriti&apos;22
+                </span>
+                <span class="secondary">
+                    MACE&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Kothamangalam
+                </span>
+            </h1>
+            <div class="menu-icon-container">
+                <img class="menu-icon" src="./img/icons/menu.svg" alt="">
+            </div>
+        </div>
+        <div class="menu">
+            <div class="container">
+                <ul class="menu-items">
+                    <li class="menu-item"><a href="/">Home</a></li>
+                    <li class="menu-item"><a href="/events.html?type=arangu">Arangu</a></li>
+                    <li class="menu-item"><a href="/events.html?type=inter">Inter</a></li>
+                </ul>
+                <p class="menu-text">Website created and maintained by Sanskriti Web Team</p>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ind-content">
+        <div class="container">
+            <div class="row">
+                <div class="left col-md-4">
+                    <img src="./img/car.png" alt="">
+                </div>
+                <div class="right col-md-8">
+                    <p class="heading">Kalolsavam</p>
+                </div>
+            </div>
+            <p class="title">Description</p>
+            <p class="description">മാർത്തോമൻ പാരമ്പര്യത്തിന്റെ അനിർവചനീയമായ വേഷപ്പൂട്ടിനും വായ്ത്താരിക്കും ചടുലതയാർന്ന ചുവടുവയ്പ്പ്........</p>
+            <p class="title">Rules</p>
+            <p class="description">some rules</p>
+            <p class="title">Contacts</p>
+            <p class="description contact">
+                <span>Kavya Rajan: 9562718641</span>
+                <span>Kavya Rajan: 9562718641</span>
+            </p>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+    <script>
+        async function fetchEventData(id) {
+            const response = await fetch(`http://localhost:8000/api/events/${id}/`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            const data = await response.json()
+            return data
+        }
+
+        function updateUI(data) {
+            const title = document.querySelector(".content .title")
+        }
+
+        const func = async () => {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString)
+            const id = urlParams.get("id")
+            
+            const eventData = await fetchEventData(id);
+            console.log(eventData)
+            updateUI(eventData)
+        }
+        func()
+    </script>
+</body>
+</html>

@@ -1,13 +1,25 @@
+@font-face {
+    font-family: RetroBoldy;
+    src: url(../fonts/RetroBoldyRegular-6Yw6v.ttf);
+}
+
+
 :root {
     --color-primary: #0B2034;
     --color-secondary: #1FC3A5;
     --color-white: #ffffff;
     --color-black: #000000;
+    --color-red: #D90000;
 }
 
 html {
     font-size: 10px;
     font-family: 'Lato', sans-serif;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
 }
 
 * {
@@ -43,7 +55,6 @@ html {
 }
 
 .button img {
-
 }
 
 /* nav section */
@@ -59,20 +70,21 @@ html {
 }
 
 
-.nav .title {
+.nav .title a {
     color: var(--color-white);
+    text-decoration: none;
 }
 
-.nav .title > span {
+.nav .title a > span {
     display: block;
 }
 
-.nav .title .primary {
+.nav .title a .primary {
     font-size: 3.1rem;
     font-family: 'Dancing Script', cursive;
 }
 
-.nav .title .secondary {
+.nav .title a .secondary {
     font-size: 1.4rem;
     font-weight: 400;
 }
@@ -150,6 +162,8 @@ html {
 
 .nav .menu-text {
     font-size: 1.4rem;
+    font-weight: 500;
+    opacity: 0.8;
 }
 
 /* nav ends */
@@ -164,7 +178,7 @@ html {
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    padding: 0 2rem;
+    padding: 0 1.4rem;
     position: relative;
 }
 
@@ -182,7 +196,7 @@ html {
     max-height: 21rem;
     max-width: 100%;
     filter: brightness(0) invert(1);
-}
+    }
 
 .hero .ring {
     border-radius: 50%;
@@ -370,6 +384,15 @@ html {
     width: 100%;
     object-fit: contain;
 }
+
+@media (max-width: 767px) {
+    .about {
+        padding: 7rem 1.4rem;
+    }
+    .about .title {
+        font-size: 5.2rem;
+    }
+}
 /* about ends */
 
 /* tagline section  */
@@ -474,6 +497,14 @@ html {
     }
 }
 
+@media (max-width: 767px) {
+    .tagline {
+        padding: 7rem 1.4rem;
+    }
+    .tagline .image {
+        margin-bottom: 4rem;
+    }
+}
 
 
 @keyframes dangling-lights-first {
@@ -593,6 +624,7 @@ html {
 
 .event {
     display: flex;
+    align-items: center;
 }
 
 .event:not(:last-child) {
@@ -638,6 +670,12 @@ html {
 }
 
 @media (max-width: 767px) {
+    .events .container {
+        padding: 7rem 1.4rem;
+    }
+}
+
+@media (max-width: 767px) {
     .event,
     .event:nth-child(2n) {
         flex-direction: column;
@@ -646,6 +684,12 @@ html {
     .event .image {
         margin: 0;
         max-width: 100%;
+    }
+    .event:not(:last-child) {
+        margin-bottom: 7rem;
+    }
+    .event .title {
+        font-size: 5.2rem;
     }
 }
 
@@ -703,6 +747,11 @@ html {
     /* line-height: 1.92rem; */
 }
 
+.footer .link a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .footer .link-title {
     position: relative;
     width: fit-content;
@@ -751,7 +800,131 @@ html {
         text-decoration: none;
         margin-right: 0;
         margin-top: 1rem;
-    }    
+    }
+    .footer .title {
+        font-size: 5.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 7rem 1.4rem;
+    }
+    .footer .subtitle {
+        margin-bottom: 6rem;
+    }
+    .footer .links {
+        margin-bottom: 6rem;
+    }
 }
 
 /* footer ends */
+
+
+/* spinner starts */
+
+.spinner {
+    -webkit-animation: rotator 1.4s linear infinite;
+            animation: rotator 1.4s linear infinite;
+  }
+  
+  @-webkit-keyframes rotator {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+  
+  @keyframes rotator {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+  .path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+            animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+  }
+  
+  @-webkit-keyframes colors {
+    0% {
+      stroke: #4285F4;
+    }
+    25% {
+      stroke: #DE3E35;
+    }
+    50% {
+      stroke: #F7C223;
+    }
+    75% {
+      stroke: #1B9A59;
+    }
+    100% {
+      stroke: #4285F4;
+    }
+  }
+  
+  @keyframes colors {
+    0% {
+      stroke: #4285F4;
+    }
+    25% {
+      stroke: #DE3E35;
+    }
+    50% {
+      stroke: #F7C223;
+    }
+    75% {
+      stroke: #1B9A59;
+    }
+    100% {
+      stroke: #4285F4;
+    }
+  }
+  @-webkit-keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      transform: rotate(450deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      transform: rotate(450deg);
+    }
+  }
+
+.spinner-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* spinner ends */
